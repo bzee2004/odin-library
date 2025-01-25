@@ -1,0 +1,86 @@
+* {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+body, .read {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background: tan; */
+}
+
+.bookshelf {
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    padding-top: 30px;
+    height: 600px;
+    background: rgb(132, 63, 26);
+    border-inline: 20px solid rgb(164, 89, 49);
+    border-top: 10px solid rgb(164, 89, 49);
+}
+
+.shelves {
+    margin: auto;
+    display: grid;
+    width: 90%;
+    height: 100%;
+    background: rgb(92, 40, 12);
+}
+
+.shelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30px);
+    grid-template-rows: repeat(auto-fit, 100px);
+    align-items: end;
+    background: rgb(65, 26, 5);
+    border-bottom: 8px solid rgb(118, 59, 27);
+}
+
+.book {
+    position: relative;
+    width: 30px;
+    height: 80%;
+    max-height: 100px;
+    background: green;
+    border-bottom: 8px solid rgb(118, 59, 27);
+}
+.book::after {
+    content: '';
+    margin-inline: auto;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background: darkgreen;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+table {
+    margin: 50px auto;
+}
+
+caption {
+    margin: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200,200,200);
+    letter-spacing: 1px;
+}
+
+td, th {
+    border: 1px solid rgb(190,190,190);
+    padding: 10px 20px;
+}
+
+.read {
+    cursor: pointer;
+    user-select: none;
+}
+

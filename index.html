@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Odin Library</title>
+</head>
+<body>
+    <!-- <div class="bookshelf">
+        <div class="shelves">
+            <div class="shelf">
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+                <div class="book"></div>
+            </div>
+        </div>
+    </div> -->
+    <table id="bookshelf">
+        <caption>Bookshelf</caption>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <button id="openDialog">Add Book</button>
+    <dialog id="addBookDialog">
+        <form method="dialog">
+            <fieldset>
+                <p>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </p>
+                <p>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author">
+                </p>
+                <p>
+                    <label for="pages">No. Pages</label>
+                    <input type="number" id="pages" name="pages">
+                </p>
+                <p>
+                    <label for="read">Read?</label>
+                    <select id="read" name="read">
+                        <option value="true">Yes</option>
+                        <option value="false" selected>No</option>
+                        
+                    </select>
+                </p>
+                <p>
+                    <button>Submit</button>
+                </p>
+            </fieldset>
+        </form>
+        <button id="closeDialog">Close</button>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
