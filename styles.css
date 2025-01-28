@@ -9,12 +9,15 @@ body, .read {
 }
 
 body {
-    /* background: tan; */
+    background: tan;
+    position: relative;
 }
 
 .bookshelf {
     display: flex;
-    width: 80%;
+    /* width: 80%; */
+    min-width: 1000px;
+    max-width: 1000px;
     margin: 20px auto;
     padding-top: 30px;
     height: 600px;
@@ -33,31 +36,106 @@ body {
 
 .shelf {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 30px);
-    grid-template-rows: repeat(auto-fit, 100px);
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    grid-template-rows: repeat(auto-fit, 120px);
     align-items: end;
     background: rgb(65, 26, 5);
+    border: 5px solid rgb(92, 40, 12);
     border-bottom: 8px solid rgb(118, 59, 27);
+    gap: 2px;
 }
 
 .book {
     position: relative;
-    width: 30px;
+    width: 40px;
     height: 80%;
-    max-height: 100px;
+    max-height: 120px;
     background: green;
-    border-bottom: 8px solid rgb(118, 59, 27);
 }
-.book::after {
+.bookAfter {
+    margin-inline: auto;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+.book:nth-child(2)::before, .book:nth-child(20n + 2)::before {
+    position: absolute;
+    content: '';
+    bottom: -20px;
+    /* width: 110%; */
+    width: clamp(100px, 2200%, 855px);
+    height: 20px;
+    background: rgb(118, 59, 27);
+    border-top: 5px solid rgb(142, 82, 50);
+    box-sizing: border-box;
+}
+.book:hover {
+    cursor: pointer;
+    opacity: 75%;
+}
+
+.popup-display {
+    position: absolute;
+    display: none;
+    width: 100px;
+    height: 80px;
+    background: rgb(117, 80, 22);
+    z-index: 10;
+    pointer-events: none;
+    text-align: center;
+    color: lightgray;
+    padding: 5px;
+    border-block: 5px solid rgb(152, 107, 36);
+}
+.popup-display h3 {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+}
+
+.temp-book::after, #openDialog::after {
     content: '';
     margin-inline: auto;
     position: absolute;
     width: 80%;
     height: 100%;
-    background: darkgreen;
     top: 0;
     left: 0;
     right: 0;
+    background: darkgreen;
+}
+
+#openDialog {
+    background: rgb(87, 87, 87);
+}
+#openDialog::after {
+    background: rgb(41, 41, 41);
+}
+
+#openDialog img {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+    top: 35px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+}
+
+.info-window {
+    position: absolute;
+    width: 300px;
+    height: 350px;
+    background: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
 }
 
 table {
